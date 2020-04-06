@@ -37,7 +37,7 @@ namespace LINKEDLIST
             return TotalCalories;
         }
 
-        public static int ReverseList(Fruit thisNode)
+        public static int ReverseList(Fruit thisNode)  // how can I get a reference to Tail here?
         {
             // write a while loop to walk over the List
             // print out each Fruit Name from Start -> END!
@@ -56,16 +56,28 @@ namespace LINKEDLIST
         }
         public static Fruit AssembleList() {
             Head = new Fruit("Peach", "Peach", 100);
+            Peach = Head;
             thisNode = Head;
             Tail = new Fruit("Banana", "Yellow", 120);
+            Banana = Tail;
             Node = new Fruit("KIWI", "Green", 40);
+            Kiwi = Node;
             Head.next = Node;
             Node = new Fruit("Orange", "Orange", 70);
+            Orange = Node;
             // kiwi is head.next  !!!
             Head.next.next = Node;
             Node = new Fruit("Pineapple", "Melon", 60);
+            Pineapple = Node;
             Head.next.next.next = Node;
             Head.next.next.next.next = Tail;
+            // I must assign all previos Object References down here because
+            // only at this point am I guarenteed to have all the object references.
+            Banana.previous = Pineapple;
+            Pineapple.previous = Orange;
+            Orange.previous = Kiwi;
+            Kiwi.previous = Peach;
+            Head.LLTail = Tail;
             return Head;
         }
     }
@@ -84,6 +96,7 @@ namespace LINKEDLIST
         public String FruitName;
         public String FruitColor;
         public int NumberOfCalories;
+        public Fruit LLTail;
 
     }
 
