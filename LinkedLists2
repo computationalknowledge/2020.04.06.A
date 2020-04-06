@@ -1,0 +1,29 @@
+using System;
+
+namespace LINKEDLIST
+{
+    class LINKEDLIST
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+
+        public void BuildLinkedList()
+        {
+            F
+        }
+    }
+
+    class Fruit
+    {
+        // class Fruit is a NODE in a LL
+        Fruit next;
+        Fruit previous;
+        String FruitName;
+        String FruitColor;
+        int NumberOfCalories;
+
+    }
+
+}
