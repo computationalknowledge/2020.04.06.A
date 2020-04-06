@@ -16,10 +16,10 @@ namespace LINKEDLIST
         static Fruit Orange;
         static void Main(string[] args)
         {
-            
+            LINKEDLIST.TraverseList(AssembleList());
         }
-        
-        public static void ListTraversal(Fruit thisNode)
+
+        public static void TraverseList(Fruit thisNode)
         {
             // write a while loop to walk over the List
             // print out each Fruit Name from Start -> END!
@@ -32,8 +32,7 @@ namespace LINKEDLIST
 
             }
         }
-        public void BuildLinkedList()
-        {
+        public Fruit AssembleList() {
             Head = new Fruit("Peach", "Peach", 100);
             thisNode = Head;
             Tail = new Fruit("Banana", "Yellow", 120);
@@ -45,7 +44,7 @@ namespace LINKEDLIST
             Node = new Fruit("Pineapple", "Melon", 60);
             Head.next.next.next = Node;
             Head.next.next.next.next = Tail;
-            LINKEDLIST.ListTraversal(Head);
+            return Head;
         }
     }
 
