@@ -4,24 +4,64 @@ namespace LINKEDLIST
 {
     class LINKEDLIST
     {
+        static Fruit currentNode;
+        static Fruit Node;
+        static Fruit thisNode;
+        static Fruit Head;
+        static Fruit Tail;
+        static Fruit Peach;
+        static Fruit Kiwi;
+        static Fruit Pineapple;
+        static Fruit Banana;
+        static Fruit Orange;
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
+        
+        public static void ListTraversal(Fruit thisNode)
+        {
+            // write a while loop to walk over the List
+            // print out each Fruit Name from Start -> END!
+            // 1. start at HEAD
+            // 2. Keeping pulling on the NEXT until you get through the list
+            //    or find what you are looking for.
+            currentNode = Head;
+            while (currentNode.next != null)
+            {
 
+            }
+        }
         public void BuildLinkedList()
         {
-            F
+            Head = new Fruit("Peach", "Peach", 100);
+            thisNode = Head;
+            Tail = new Fruit("Banana", "Yellow", 120);
+            Node = new Fruit("KIWI", "Green", 40);
+            Head.next = Node;
+            Node = new Fruit("Orange", "Orange", 70);
+            // kiwi is head.next  !!!
+            Head.next.next = Node;
+            Node = new Fruit("Pineapple", "Melon", 60);
+            Head.next.next.next = Node;
+            Head.next.next.next.next = Tail;
+            LINKEDLIST.ListTraversal(Head);
         }
     }
 
     class Fruit
     {
+        public Fruit(String fname, String fcolor, int calories)
+        {
+            this.FruitName = fname;
+            this.FruitColor = fcolor;
+            this.NumberOfCalories = calories;
+        }
         // class Fruit is a NODE in a LL
-        Fruit next;
-        Fruit previous;
-        String FruitName;
-        String FruitColor;
+        public Fruit next;
+        public Fruit previous;
+        public String FruitName;
+        public String FruitColor;
         int NumberOfCalories;
 
     }
