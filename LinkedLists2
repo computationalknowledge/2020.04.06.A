@@ -29,10 +29,11 @@ namespace LINKEDLIST
             currentNode = Head;
             while (currentNode.next != null)
             {
-
+                Console.WriteLine("{0} {1}", currentNode.FruitName, currentNode.FruitColor);
+                currentNode = currentNode.next;
             }
         }
-        public Fruit AssembleList() {
+        public static Fruit AssembleList() {
             Head = new Fruit("Peach", "Peach", 100);
             thisNode = Head;
             Tail = new Fruit("Banana", "Yellow", 120);
