@@ -1,3 +1,5 @@
+using System;
+
 namespace _20200406.A
 {
     // recipe:
@@ -7,15 +9,22 @@ namespace _20200406.A
     {
         static void Main(string[] args)
         {
-            Orange o = new Orange();
+            string input = Console.ReadLine();
+            Orange.ReverseString(input);
+
         }
     }
 
     class Orange
     {
-        public void ReverseString(String a)
+        public static void ReverseString(String a)
         {
-            // reverse the string
+            // walk over the string
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+            
         }
     }
 }
