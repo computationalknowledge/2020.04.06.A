@@ -16,10 +16,10 @@ namespace LINKEDLIST
         static Fruit Orange;
         static void Main(string[] args)
         {
-            LINKEDLIST.TraverseList(AssembleList());
+            Console.WriteLine("Total Number of Calories is {0}",LINKEDLIST.TraverseList(AssembleList()));
         }
 
-        public static void TraverseList(Fruit thisNode)
+        public static int TraverseList(Fruit thisNode)
         {
             // write a while loop to walk over the List
             // print out each Fruit Name from Start -> END!
@@ -27,11 +27,14 @@ namespace LINKEDLIST
             // 2. Keeping pulling on the NEXT until you get through the list
             //    or find what you are looking for.
             currentNode = Head;
-            while (currentNode.next != null)
+            int TotalCalories = 0;
+            while (currentNode != null)
             {
+                TotalCalories += TotalCalories + currentNode.NumberOfCalories; 
                 Console.WriteLine("{0} {1}", currentNode.FruitName, currentNode.FruitColor);
-                currentNode = currentNode.next;
+                currentNode = currentNode.next;  
             }
+            return TotalCalories;
         }
         public static Fruit AssembleList() {
             Head = new Fruit("Peach", "Peach", 100);
@@ -62,7 +65,7 @@ namespace LINKEDLIST
         public Fruit previous;
         public String FruitName;
         public String FruitColor;
-        int NumberOfCalories;
+        public int NumberOfCalories;
 
     }
 
